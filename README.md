@@ -6,6 +6,7 @@ Bash copy script from vps to vps with crontab scheduling (debian)
 
 ```
 wget https://github.com/neonexxa/nexxacopy/archive/v0.1.tar.gz
+tar xpvf v0.1.tar.gz
 
 ```
 
@@ -14,20 +15,25 @@ wget https://github.com/neonexxa/nexxacopy/archive/v0.1.tar.gz
 copy the file to your bin folder
 
 ```
+cd nexxacopy-0.1/
 cp nexxacopy-0.1-beta.sh /bin/
 
 ```
 
 edit the file based on your copy or migration schedule
 
+	nano /bin/nexxacopy-0.1-beta.sh
+
+What you will see:
+
 ```
+#!/bin/bash
 
 sshpass -p 'password_for_remote_host' scp -r /original_folder_to_copy/ root@remote_host:/destination_of_copy/
 
+rm -rf /original_folder_to_copy/
 
 ```
-
-The script is sending 2 argument
 
 Uses :
 
