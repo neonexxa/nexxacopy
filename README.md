@@ -1,8 +1,8 @@
-# nexxacopy
+# Nexxacopy
 
 Bash copy script from vps to vps with crontab scheduling (debian)
 
-### Download zip
+### Download the ZIP 📦
 
 ```
 wget https://github.com/neonexxa/nexxacopy/archive/v0.1.tar.gz
