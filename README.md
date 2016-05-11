@@ -5,8 +5,8 @@ Bash copy script from vps to vps with crontab scheduling (debian)
 ### Download the ZIP 📦
 
 ```
-wget https://github.com/neonexxa/nexxacopy/archive/v0.2.tar.gz
-tar xpvf v0.2.tar.gz
+wget https://github.com/neonexxa/nexxacopy/archive/v0.3.tar.gz
+tar xpvf v0.3.tar.gz
 
 ```
 
@@ -15,14 +15,14 @@ tar xpvf v0.2.tar.gz
 copy the file to your bin folder
 
 ```
-cd nexxacopy-0.2/
-cp nexxacopy-0.2-beta.sh /bin/
+cd nexxacopy-0.3/
+cp nexxacopy-0.3-beta.sh /bin/
 
 ```
 
 edit the file based on your copy or migration schedule
 
-	nano /bin/nexxacopy-0.2-beta.sh
+	nano /bin/nexxacopy-0.3-beta.sh
 
 What you will see:
 
@@ -72,7 +72,7 @@ To edit your crontabe file run:
 
 Enter the following:
 
-	0   *   *   *   * /bin/nexxacopy-0.2-beta.sh
+	0   *   *   *   * /bin/nexxacopy-0.3-beta.sh
 
 this will tell the crontab to run our new bash file. you can learn more about the timing of scheduling in the crontab documentation. 
 
