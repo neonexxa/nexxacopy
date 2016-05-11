@@ -5,8 +5,8 @@ Bash copy script from vps to vps with crontab scheduling (debian)
 ### Download the ZIP 📦
 
 ```
-wget https://github.com/neonexxa/nexxacopy/archive/v0.1.tar.gz
-tar xpvf v0.1.tar.gz
+wget https://github.com/neonexxa/nexxacopy/archive/v0.2.tar.gz
+tar xpvf v0.2.tar.gz
 
 ```
 
@@ -15,14 +15,14 @@ tar xpvf v0.1.tar.gz
 copy the file to your bin folder
 
 ```
-cd nexxacopy-0.1/
-cp nexxacopy-0.1-beta.sh /bin/
+cd nexxacopy-0.2/
+cp nexxacopy-0.2-beta.sh /bin/
 
 ```
 
 edit the file based on your copy or migration schedule
 
-	nano /bin/nexxacopy-0.1-beta.sh
+	nano /bin/nexxacopy-0.2-beta.sh
 
 What you will see:
 
@@ -31,7 +31,9 @@ What you will see:
 
 sshpass -p 'password_for_remote_host' scp -r /original_folder_to_copy/ root@remote_host:/destination_of_copy/
 
-rm -rf /original_folder_to_copy/
+shopt -s extglob
+
+rm -rf /original_folder_to_copy/!(except_this_folder)
 
 ```
 
@@ -51,7 +53,10 @@ apt-get install sshpass
 Lastly it will delete the original file
 
 ```
-rm -rf /original_folder_to_copy/
+
+shopt -s extglob  #this will allow the use of "!" below
+
+rm -rf /original_folder_to_copy/!(except_this_folder)
 
 ```
 
@@ -67,7 +72,7 @@ To edit your crontabe file run:
 
 Enter the following:
 
-	0   *   *   *   * /bin/nexxacopy-0.1-beta.sh
+	0   *   *   *   * /bin/nexxacopy-0.2-beta.sh
 
 this will tell the crontab to run our new bash file. you can learn more about the timing of scheduling in the crontab documentation. 
 
